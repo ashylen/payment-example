@@ -15,7 +15,10 @@ import CustomInput from "../CustomInputs/CustomInput";
 import styles from "./AddCardForm.module.scss";
 import * as userActions from "../../actions/userActions";
 import { required as isRequired } from "../../utilities/validators/required";
-import { number as creditCardNumberValidator } from "../../utilities/validators/creditCard";
+import {
+  number as creditCardNumberValidator,
+  ccv as ccvValidator
+} from "../../utilities/validators/creditCard";
 
 const renderSelect = field => (
   <div>
@@ -101,8 +104,8 @@ class AddCardForm extends React.Component {
               placeholder=" "
               component={CustomInput}
               type="text"
-              validate={[isRequired]}
-              label="Card holder"
+              validate={[isRequired, ccvValidator]}
+              label="CCV"
             />
             <br />
             <span>Expiration month</span>
@@ -128,11 +131,6 @@ class AddCardForm extends React.Component {
             ></Field>
             <br />
             <div className={styles.modalNavigation}>
-              {/* {pristine ? null : (
-                <Button cssClass="" type="button" disabled={pristine} onClick={reset}>
-                  Wyczyść
-                </Button>
-              )} */}
               <Button type="submit" disabled={submitting}>
                 Dodaj
               </Button>

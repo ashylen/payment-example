@@ -18,3 +18,8 @@ export const number = value => {
 
   return isValid ? undefined : "Invalid card number";
 };
+
+export const ccv = value => {
+  const ccvRegexp = new RegExp("^[0-9]{3,4}$");
+  return ccvRegexp.test(value) ? undefined : "Invalid CCV";
+};
