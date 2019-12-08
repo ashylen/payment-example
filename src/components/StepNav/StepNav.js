@@ -24,7 +24,7 @@ const StepNav = ({ step }) => {
           })}
         >
           <span className={styles.circle}>2</span>
-          <span className={styles.text}>Credit card</span>
+          <span className={styles.text}>Choose Credit card</span>
         </div>
         <div
           className={classNames(styles.stepText, {

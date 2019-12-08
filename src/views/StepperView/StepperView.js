@@ -25,11 +25,15 @@ const Stepper = () => {
     <MainTemplate>
       <main className={styles.main}>
         <StepNav step={step} />
-        <div className={styles.cartWrapper}>
-          {step === 1 && <CartItems items={cart} />}
+        <div>
+          {step === 1 && (
+            <div className={styles.cartWrapper}>
+              <CartItems items={cart} />
+            </div>
+          )}
           {step === 2 && <CreditCard />}
         </div>
-        <div>
+        <div className={styles.stepperNav}>
           {step > 1 && (
             <Button onClick={() => setStep(step - 1)}>Previous</Button>
           )}

@@ -13,3 +13,15 @@ export const fetchUser = () => async dispatch => {
     throw error;
   }
 };
+
+export const addCard = () => async dispatch => {
+  try {
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/user`);
+    dispatch({
+      type: FETCH_USER,
+      payload: response.data
+    });
+  } catch (error) {
+    throw error;
+  }
+};
