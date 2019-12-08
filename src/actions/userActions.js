@@ -18,15 +18,8 @@ export const fetchUserCards = () => async dispatch => {
 
 export const addCard = data => async dispatch => {
   try {
-    console.log(data);
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/userCards`,
-      {
-        ...data
-      }
-    );
+    await axios.post(`${process.env.REACT_APP_API_URL}/userCards`, { ...data });
   } catch (error) {
     console.error(error);
-    // dispatch({ type: ADD_articleS_FAILURE });
   }
 };

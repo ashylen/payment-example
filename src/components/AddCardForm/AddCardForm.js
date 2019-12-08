@@ -16,11 +16,22 @@ import styles from "./AddCardForm.module.scss";
 import * as userActions from "../../actions/userActions";
 import { required as isRequired } from "../../utilities/validators/required";
 
+const renderSelect = field => (
+  <div>
+    <select {...field.input}>
+      <option value="">-- Select --</option>
+      {field.options}
+    </select>
+    {field.meta.touched && field.meta.error && (
+      <div className={styles.error}>{field.meta.error}</div>
+    )}
+  </div>
+);
+
 class AddCardForm extends React.Component {
   handleSubmit = async values => {
     const { addCard, closeModalFn, idCurrentItem, fetchUserCards } = this.props;
 
-    console.log(values);
     try {
       await addCard(values);
       await fetchUserCards();
@@ -97,25 +108,23 @@ class AddCardForm extends React.Component {
             <Field
               name="expiration_month"
               placeholder=" "
-              component="select"
+              component={renderSelect}
               type="text"
+              options={this.getMonthOptions()}
               validate={[isRequired]}
               label="Expiration month"
-            >
-              {this.getMonthOptions()}
-            </Field>
+            ></Field>
             <br />
             <span>Expiration year</span>
             <Field
               name="expiration_year"
               placeholder=" "
-              component="select"
+              component={renderSelect}
               type="text"
+              options={this.getYearOptions()}
               validate={[isRequired]}
               label="Expiration year"
-            >
-              {this.getYearOptions()}
-            </Field>
+            ></Field>
             <br />
             <div className={styles.modalNavigation}>
               {/* {pristine ? null : (
