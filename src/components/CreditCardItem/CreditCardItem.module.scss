@@ -16,7 +16,7 @@
   transition: all 0.8s cubic-bezier(0.71, 0.03, 0.56, 0.85);
   backface-visibility: hidden;
   height: 100%;
-  margin: 10px;
+  margin: 5px;
 
   .cardWrapper {
     padding: 25px 15px;
@@ -99,6 +99,7 @@
         display: inline-block;
         padding: 10px 15px;
         cursor: pointer;
+        word-break: break-word;
 
         .numberItem {
           display: inline-block;
@@ -112,16 +113,25 @@
       .cardBottom {
         display: flex;
 
+        @media (max-width: 550px) {
+          flex-direction: column;
+          justify-content: center;
+        }
+
         .date {
           flex-wrap: wrap;
           font-size: 18px;
           margin-left: auto;
           padding: 10px;
           display: inline-flex;
-          width: 80px;
+          width: 100px;
           white-space: nowrap;
           flex-shrink: 0;
           color: #fff;
+
+          @media (max-width: 550px) {
+            margin: 0;
+          }
 
           .dateTitle {
             opacity: 0.9;
@@ -139,9 +149,14 @@
 
         .cardInfo {
           width: 100%;
-          max-width: calc(100% - 85px);
+          max-width: calc(100% - 100px);
           padding: 10px 15px;
           display: block;
+
+          @media (max-width: 550px) {
+            width: 100%;
+            max-width: none;
+          }
 
           .cardHolder {
             opacity: 0.9;

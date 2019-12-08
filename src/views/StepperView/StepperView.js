@@ -37,6 +37,7 @@ const Stepper = () => {
           )}
           {step === 2 && <CreditCard />}
           {step === 3 && <PaymentConfirmation cartItems={cart} />}
+          <br />
         </div>
         <div className={styles.stepperNav}>
           {step > 1 && (

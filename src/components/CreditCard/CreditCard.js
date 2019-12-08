@@ -44,7 +44,7 @@ const CreditCard = ({ step }) => {
     arrows: false,
     infinite: false,
     speed: 500,
-    centerPadding: "60px",
+    centerPadding: "20px",
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,

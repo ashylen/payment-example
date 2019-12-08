@@ -37,3 +37,9 @@ code {
   height: 5px;
   background: #d1d1d1;
 }
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
