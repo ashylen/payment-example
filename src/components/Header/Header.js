@@ -1,12 +1,16 @@
 import React from "react";
 
+// Utils
 import styles from "./Header.module.scss";
+
+// Components
+import Nav from "../Nav/Nav";
 
 const Header = () => {
   return (
-    <div className={styles.wrapper}>
-      <span>Header :div</span>
-    </div>
+    <header className={styles.mainHeader}>
+      <Nav />
+    </header>
   );
 };
 

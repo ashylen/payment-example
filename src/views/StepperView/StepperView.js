@@ -1,14 +1,14 @@
 import React from "react";
 
+// Components
+import MainTemplate from "../../templates/MainTemplate/MainTemplate";
 import CartView from "../../components/CartView/CartView";
 
 const Stepper = () => {
   return (
-    <div className="Stepper">
-      <header className="Stepper-header">
-        <CartView />
-      </header>
-    </div>
+    <MainTemplate>
+      <CartView />
+    </MainTemplate>
   );
 };
 

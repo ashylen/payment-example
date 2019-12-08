@@ -1,7 +1,9 @@
 import React from "react";
 
 import ReactDOM from "react-dom";
+import "typeface-montserrat";
 import "./index.css";
+import "normalize.css";
 import Root from "./views/Root/Root";
 import * as serviceWorker from "./serviceWorker";
 
