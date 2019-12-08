@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 // Utils
 import styles from "./StepperView.module.scss";
+import getTotalCost from "../../helpers/functions/getCartTotalCost";
 
 // Components
 import MainTemplate from "../../templates/MainTemplate/MainTemplate";
@@ -29,6 +30,8 @@ const Stepper = () => {
           {step === 1 && (
             <div className={styles.cartWrapper}>
               <CartItems items={cart} />
+              <br />
+              <div className={styles.total}>Total: {getTotalCost(cart)}$</div>
             </div>
           )}
           {step === 2 && <CreditCard />}
