@@ -9,6 +9,9 @@
   z-index: 1150;
   will-change: transform;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media (max-width: 767px) {
     width: 100vw;
@@ -166,6 +169,15 @@
   .bottom {
     display: flex;
     justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    padding: 10px;
+
+    .total {
+      padding: 10px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
 
     a {
       display: flex;
