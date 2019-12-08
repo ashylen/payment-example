@@ -1,0 +1,93 @@
+.navWrapper {
+  max-width: 1440px;
+  width: 90%;
+  margin: auto;
+}
+
+.brandWrapper {
+  a {
+    margin: 10px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+
+    span {
+      display: block;
+      padding: 10px;
+    }
+  }
+  .logo {
+    max-width: 70px;
+  }
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+
+  .burgerButton {
+    background: rgba(22, 17, 16, 0.8);
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 100;
+    padding: 0;
+    display: flex;
+  }
+
+  .item {
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    .cart {
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+
+      .icoWrapper {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .count {
+        position: absolute;
+        top: -3px;
+        right: 0px;
+        font-size: 0.8rem;
+        background: #d1d1d1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 30px 20px;
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      font-size: 1.6rem;
+    }
+  }
+}

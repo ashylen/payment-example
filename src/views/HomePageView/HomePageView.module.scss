@@ -1,0 +1,22 @@
+@keyframes glowing {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.text {
+  opacity: 0.5;
+  margin: auto;
+  font-size: 40px;
+  color: #222;
+  padding: 20px;
+  text-align: center;
+  animation: glowing 2s infinite;
+}
