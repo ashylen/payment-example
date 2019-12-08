@@ -1,26 +1,30 @@
 {
-  "user": {
-    "id": 1,
-    "name": "Test",
-    "cards": [
-      {
-        "id": 1,
-        "number": "4444 4444 5555 5555 5555",
-        "card_holder": "John Smith",
-        "ccv": 654,
-        "expiration_month": 12,
-        "expiration_year": 2029
-      },
-      {
-        "id": 2,
-        "number": "5555 5555 1111 1111 1111",
-        "card_holder": "John Smith",
-        "ccv": 123,
-        "expiration_month": 10,
-        "expiration_year": 2025
-      }
-    ]
-  },
+  "userCards": [
+    {
+      "id": 1,
+      "number": "4444 4444 5555 5555 5555",
+      "card_holder": "John Smith",
+      "ccv": 654,
+      "expiration_month": 12,
+      "expiration_year": 2029
+    },
+    {
+      "id": 2,
+      "number": "5555 5555 1111 1111 1111",
+      "card_holder": "John Smith",
+      "ccv": 123,
+      "expiration_month": 10,
+      "expiration_year": 2025
+    },
+    {
+      "number": "1111111111111",
+      "card_holder": "11111111111111111",
+      "ccv": "1111111111111",
+      "expiration_month": "5",
+      "expiration_year": "2023",
+      "id": 3
+    }
+  ],
   "cart": [
     {
       "id": 1,

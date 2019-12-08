@@ -1,15 +1,15 @@
-import { FETCH_USER } from "../actions/userActions";
+import { FETCH_USER_CARDS } from "../actions/userActions";
 
 const initialState = {
-  user: {}
+  userCards: {}
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_USER:
+    case FETCH_USER_CARDS:
       return {
         ...state,
-        user: action.payload
+        userCards: action.payload
       };
     default:
       return state;

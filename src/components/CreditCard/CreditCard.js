@@ -10,7 +10,7 @@ import { CSSTransition } from "react-transition-group";
 // Utils
 import fadeTransition from "../../utilities/css/transitions/fade.module.scss";
 import { openCardModal, closeCardModal } from "../../actions/modalActions";
-import { fetchUser } from "../../actions/userActions";
+import { fetchUserCards } from "../../actions/userActions";
 import styles from "./CreditCard.module.scss";
 
 // Components
@@ -21,8 +21,8 @@ import Button from "../Button/Button";
 
 const CreditCard = ({ step }) => {
   const dispatch = useDispatch();
-  const { user } = useSelector(state => ({
-    user: state.user.user
+  const { userCards } = useSelector(state => ({
+    userCards: state.user.userCards
   }));
 
   const { isModalOpen } = useSelector(state => ({
@@ -33,7 +33,7 @@ const CreditCard = ({ step }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await dispatch(fetchUser());
+      await dispatch(fetchUserCards());
     };
 
     fetchData();
@@ -57,11 +57,11 @@ const CreditCard = ({ step }) => {
   return (
     <div className={styles.wrapper}>
       <Slider {...settings}>
-        {!!user.cards &&
-          user.cards.length > 0 &&
-          user.cards.map(card => <CreditCardItem data={card} />)}
+        {!!userCards &&
+          userCards.length > 0 &&
+          userCards.map(card => <CreditCardItem data={card} />)}
       </Slider>
-      <div>
+      <div className={styles.addCardButtonWrapper}>
         <Button onClick={() => dispatch(openCardModal())}>Add new card</Button>
       </div>
       <CSSTransition

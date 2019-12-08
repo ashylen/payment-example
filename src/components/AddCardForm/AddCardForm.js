@@ -17,12 +17,13 @@ import * as userActions from "../../actions/userActions";
 import { required as isRequired } from "../../utilities/validators/required";
 
 class AddCardForm extends React.Component {
-  handleSubmit = async formData => {
-    const { addCard, closeModalFn, idCurrentItem, fetchUser } = this.props;
+  handleSubmit = async values => {
+    const { addCard, closeModalFn, idCurrentItem, fetchUserCards } = this.props;
 
+    console.log(values);
     try {
-      await addCard(formData);
-      await fetchUser();
+      await addCard(values);
+      await fetchUserCards();
     } catch (e) {
       console.error(e);
     }
@@ -68,7 +69,7 @@ class AddCardForm extends React.Component {
             })}
           >
             <Field
-              name="title"
+              name="number"
               placeholder=" "
               component={CustomInput}
               type="text"
@@ -141,11 +142,11 @@ AddCardForm.propTypes = {
   addCard: PropTypes.func.isRequired,
   closeModalFn: PropTypes.func.isRequired,
   idCurrentItem: PropTypes.number,
-  fetchUser: PropTypes.func.isRequired
+  fetchUserCards: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchUser: bindActionCreators(userActions.fetchUser, dispatch),
+  fetchUserCards: bindActionCreators(userActions.fetchUserCards, dispatch),
   addCard: bindActionCreators(userActions.addCard, dispatch),
   reset: bindActionCreators(resetReduxForm, dispatch)
 });

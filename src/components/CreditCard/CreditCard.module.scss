@@ -1,4 +1,10 @@
 .wrapper {
   max-width: 600px;
   margin: auto;
+
+  .addCardButtonWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
 }

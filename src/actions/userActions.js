@@ -1,12 +1,14 @@
 import axios from "axios";
 
-export const FETCH_USER = "FETCH_USER";
+export const FETCH_USER_CARDS = "FETCH_USER_CARDS";
 
-export const fetchUser = () => async dispatch => {
+export const fetchUserCards = () => async dispatch => {
   try {
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/user`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/userCards`
+    );
     dispatch({
-      type: FETCH_USER,
+      type: FETCH_USER_CARDS,
       payload: response.data
     });
   } catch (error) {
@@ -14,14 +16,17 @@ export const fetchUser = () => async dispatch => {
   }
 };
 
-export const addCard = () => async dispatch => {
+export const addCard = data => async dispatch => {
   try {
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/user`);
-    dispatch({
-      type: FETCH_USER,
-      payload: response.data
-    });
+    console.log(data);
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_URL}/userCards`,
+      {
+        ...data
+      }
+    );
   } catch (error) {
-    throw error;
+    console.error(error);
+    // dispatch({ type: ADD_articleS_FAILURE });
   }
 };

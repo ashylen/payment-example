@@ -15,6 +15,11 @@
   align-items: flex-start;
   animation: fadeIn 0.5s;
 
+  select {
+    padding: 8px;
+    margin: 5px 0;
+  }
+
   & button {
     max-width: unset;
   }
