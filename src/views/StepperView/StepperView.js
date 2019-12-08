@@ -16,7 +16,7 @@ import Button from "../../components/Button/Button";
 import PaymentConfirmation from "../../components/PaymentConfirmation/PaymentConfirmation";
 
 const Stepper = () => {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   const { cart } = useSelector(state => ({
     cart: state.cart.items
   }));
