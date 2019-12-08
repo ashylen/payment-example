@@ -15,6 +15,7 @@ import CustomInput from "../CustomInputs/CustomInput";
 import styles from "./AddCardForm.module.scss";
 import * as userActions from "../../actions/userActions";
 import { required as isRequired } from "../../utilities/validators/required";
+import { number as creditCardNumberValidator } from "../../utilities/validators/creditCard";
 
 const renderSelect = field => (
   <div>
@@ -84,7 +85,7 @@ class AddCardForm extends React.Component {
               placeholder=" "
               component={CustomInput}
               type="text"
-              validate={[isRequired]}
+              validate={[isRequired, creditCardNumberValidator]}
               label="Number"
             />
             <Field

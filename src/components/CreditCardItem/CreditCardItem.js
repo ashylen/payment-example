@@ -3,8 +3,19 @@ import React from "react";
 // Utils
 import chip from "../../assets/images/chip.png";
 import visa from "../../assets/images/visa.png";
+import mastercard from "../../assets/images/mastercard.png";
 import cardBg from "../../assets/images/bg.jpeg";
 import styles from "./CreditCardItem.module.scss";
+
+const getLogoByCardNumber = number => {
+  let regex = new RegExp("^4");
+  if (number.match(regex) != null) return visa;
+
+  regex = new RegExp("^5[1-5]");
+  if (number.match(regex) != null) return mastercard;
+
+  return visa;
+};
 
 const CreditCardItem = ({ data }) => {
   return (
@@ -17,7 +28,7 @@ const CreditCardItem = ({ data }) => {
           <div className={styles.cardTop}>
             <img src={chip} className={styles.chip} alt="chip" />
             <div className={styles.type}>
-              <img src={visa} alt="Provider logo" />
+              <img src={getLogoByCardNumber(data.number)} alt="Provider logo" />
             </div>
           </div>
           <div className={styles.number}>{data.number}</div>

@@ -15,6 +15,14 @@
       "ccv": 123,
       "expiration_month": 10,
       "expiration_year": 2025
+    },
+    {
+      "number": "4445454545545455",
+      "card_holder": "222222222",
+      "ccv": "222222222",
+      "expiration_month": "3",
+      "expiration_year": "2021",
+      "id": 3
     }
   ],
   "cart": [
