@@ -1,13 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+
+// Modules
+import { useSelector } from "react-redux";
+
+// Utils
+import styles from "./StepperView.module.scss";
 
 // Components
 import MainTemplate from "../../templates/MainTemplate/MainTemplate";
-import CartView from "../../components/CartView/CartView";
+import CartItems from "../../components/CartItems/CartItems";
+import CreditCard from "../../components/CreditCard/CreditCard";
+import StepNav from "../../components/StepNav/StepNav";
+import Button from "../../components/Button/Button";
 
 const Stepper = () => {
+  const [step, setStep] = useState(2);
+  const { cart } = useSelector(state => ({
+    cart: state.cart.items
+  }));
+
+  const finalStep = 3;
+
   return (
     <MainTemplate>
-      <CartView />
+      <main className={styles.main}>
+        <StepNav step={step} />
+        <div className={styles.cartWrapper}>
+          {step === 1 && <CartItems items={cart} />}
+          {step === 2 && <CreditCard />}
+        </div>
+        <div>
+          {step > 1 && (
+            <Button onClick={() => setStep(step - 1)}>Previous</Button>
+          )}
+          {step !== finalStep && (
+            <Button onClick={() => setStep(step * 1 + 1)}>Next</Button>
+          )}
+        </div>
+      </main>
     </MainTemplate>
   );
 };
