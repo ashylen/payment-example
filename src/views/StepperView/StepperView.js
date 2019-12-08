@@ -11,8 +11,9 @@ import getTotalCost from "../../helpers/functions/getCartTotalCost";
 import MainTemplate from "../../templates/MainTemplate/MainTemplate";
 import CartItems from "../../components/CartItems/CartItems";
 import CreditCard from "../../components/CreditCard/CreditCard";
-import StepNav from "../../components/StepNav/StepNav";
+import StepNav from "../../components/StepBreadcrumbs/StepBreadcrumbs";
 import Button from "../../components/Button/Button";
+import PaymentConfirmation from "../../components/PaymentConfirmation/PaymentConfirmation";
 
 const Stepper = () => {
   const [step, setStep] = useState(2);
@@ -35,6 +36,7 @@ const Stepper = () => {
             </div>
           )}
           {step === 2 && <CreditCard />}
+          {step === 3 && <PaymentConfirmation cartItems={cart} />}
         </div>
         <div className={styles.stepperNav}>
           {step > 1 && (

@@ -24,3 +24,16 @@ code {
   justify-content: space-between;
   min-height: 100vh;
 }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.5);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 5px;
+  background: #d1d1d1;
+}

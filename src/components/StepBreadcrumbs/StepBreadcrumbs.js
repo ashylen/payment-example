@@ -4,9 +4,9 @@ import React from "react";
 import classNames from "classnames";
 
 // Utils
-import styles from "./StepNav.module.scss";
+import styles from "./StepBreadcrumbs.module.scss";
 
-const StepNav = ({ step }) => {
+const StepBreadcrumbs = ({ step }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.line}>
@@ -39,4 +39,4 @@ const StepNav = ({ step }) => {
   );
 };
 
-export default StepNav;
+export default StepBreadcrumbs;
